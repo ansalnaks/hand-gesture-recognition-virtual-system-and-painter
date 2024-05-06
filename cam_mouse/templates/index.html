@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topo Virtuale</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+<style>
+  body {
+    background-image: url('/static/front.jpg');/* Replace 'your-background-image.jpg' with the URL or path to your background image */
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    background-size: cover; /* Cover the entire viewport with the background image */
+    position: relative;
+  }
+  h1 {
+    font-size: 3em;
+    font-family: cursive;
+    margin-bottom: 100px; /* Increased distance between heading and buttons */
+    position: relative;
+    animation: moveText 3s infinite alternate;
+  }
+  @keyframes moveText {
+    0% {
+      left: -20px;
+    }
+    100% {
+      left: 20px;
+    }
+  }
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+  }
+  button {
+    background-color:white;
+    color: black;
+    font-family: cursive;
+    padding: 20px 40px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size:medium;
+  }
+  button:hover {
+    background-color: #184776; /* Change background color on hover */
+  }
+  .logo {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    width: 100px; /* Adjust as needed */
+    height: auto;
+    z-index: 1; /* Ensure the logo appears above other content */
+    animation: moveLogo 4s linear infinite alternate; /* Animation to move the logo */
+    opacity: 0;
+  }
+  @keyframes moveLogo {
+    0% {
+      top: -100px; /* Start position above the visible area */
+      opacity: 0; /* Initially invisible */
+    }
+    100% {
+      top: 80px; /* Adjust as needed */
+      opacity: 1; /* Fully visible */
+    }
+  }
+</style>
+</head>
+<body>
+  <img class="logo" src="/static/logol.png"  alt="Logo">
+<h1>Topo Virtuale</h1>
+
+<div class="button-container">
+  <form action="/start" method="post">
+    <button class="button" type="submit">Start</button>
+</form>
+<form action="/stop" method="post">
+    <button class="button" type="submit">Stop</button>
+</form>
+    <form action="/painter" method="post">
+    <button class="button" type="submit">Painter</button>
+    </form>
+
+  <button id="helpBtn"><a href="/mainpage" style="text-decoration: none;color: black;">HELP</a></button>
+</div>
+
+
+
+</body>
+</html>
